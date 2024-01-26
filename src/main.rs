@@ -19,14 +19,17 @@ use wgpu::{
 use winit::{
     event::{Event, WindowEvent},
     event_loop::EventLoop,
-    window::Window,
+    window::{Window, WindowBuilder},
 };
 
 #[tokio::main]
 async fn main() {
     // Setup windowing
     let event_loop = EventLoop::new().expect("New event loop");
-    let window = Window::new(&event_loop).expect("New window");
+    let window = WindowBuilder::new()
+        .with_title("Random Shader Window")
+        .build(&event_loop)
+        .expect("New window");
 
     // Setup the app
     let mut app = App::new(window).await;
