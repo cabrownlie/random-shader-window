@@ -32,7 +32,7 @@ async fn main() {
     let mut app = App::new(window).await;
 
     // Run the event loop
-    let _ = event_loop.run(|event, _elwt| match event {
+    let _ = event_loop.run(|event, elwt| match event {
         Event::WindowEvent {
             window_id: _,
             event,
@@ -56,6 +56,9 @@ async fn main() {
                 // HACK: Force a redraw, because I can't figure out how to cleanly call
                 // [window.request_redraw()] without the borrow checker complaining.
                 app.render();
+            }
+            WindowEvent::CloseRequested => {
+                elwt.exit();
             }
             _ => {}
         },
