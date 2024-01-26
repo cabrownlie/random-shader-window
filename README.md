@@ -2,6 +2,8 @@
 
 This project is a playground for learning how to use the WebGPU Shading Language (WGSL). It sets up a window and a basic render pipeline using the `wgpu` and `winit` crates, and then applies a random shader to the window.
 
+![simple_render_window](https://github.com/cabrownlie/random-shader-window/assets/13515086/deb115f0-15e5-4e52-9b37-2b646324e23d)
+
 ## Features
 
 - Window setup using `winit`
