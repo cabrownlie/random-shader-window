@@ -7,5 +7,21 @@
 			"target": "/usr/local/cargo",
 			"type": "volume"
 		}
-	]
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rust-lang.rust-analyzer",
+				"tamasfe.even-better-toml",
+				"fill-labs.dependi",
+				"Swellaby.vscode-rust-test-adapter",
+				"PolyMeilex.rust-targets"
+			]
+		}
+	},
+	"hostRequirements": {
+		"cpus": 8,
+		"memory": "16gb",
+		"storage": "32gb"
+	}
 }
