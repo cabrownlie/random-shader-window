@@ -35,15 +35,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
+        
+      - name: Install wasm-bindgen-cli
+        run: cargo install wasm-bindgen-cli
+        
+      - name: Generate wasm-bindgen output
+        run: wasm-bindgen target/wasm32-unknown-unknown/release/random_shader_window.wasm --out-dir ./out --web
+        
+      - name: Copy index.html to deploy directory
+        run: cp index.html ./out
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: wasm-build
-          path: pkg
-
+          # Upload entire repository
+          path: ./out
+          
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./pkg
+        id: deployment
+        uses: actions/deploy-pages@v4
