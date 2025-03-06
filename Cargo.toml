@@ -9,7 +9,8 @@ opt-level = 1
 opt-level = 3
 
 [dependencies]
-winit = "0.29.10"
-wgpu = "0.19.1"
-tokio = { version = "1.35.1", features = ["full"] }
-bytemuck = "1.14.1"
+winit = "0.30.9"
+wgpu = { version = "24.0.1", features = ["webgl"] }
+bytemuck = "1.22.0"
+pollster = "0.4.0"
+wasm-bindgen-futures = "0.4.50"
