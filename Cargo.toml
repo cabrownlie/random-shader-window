@@ -14,5 +14,7 @@ wgpu = { version = "24.0.1", features = ["webgl"] }
 bytemuck = "1.22.0"
 pollster = "0.4.0"
 wasm-bindgen-futures = "0.4.50"
-wasm-bindgen = "0.2.78"
+
+
+[dev-dependencies]
 wasm-server-runner = "0.1.0"

@@ -1,10 +1,8 @@
 use std::sync::Arc;
-use wasm_bindgen::prelude::*;
 
 use random_shader_window::app::App;
 use winit::{event_loop::EventLoop, window::Window};
 
-#[wasm_bindgen(start)]
 pub fn main() {
 	let event_loop = EventLoop::new().unwrap();
 
