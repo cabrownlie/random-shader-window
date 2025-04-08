@@ -23,6 +23,6 @@ pub fn main() {
 }
 
 async fn run(event_loop: EventLoop<()>, window: Arc<Window>) {
-	let mut app = pollster::block_on(App::new(window));
+	let mut app = App::new(window).await;
 	let _ = event_loop.run_app(&mut app);
 }
